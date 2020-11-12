@@ -1,0 +1,339 @@
+/*feuille de style css site hotel*/
+
+body
+{
+    background-color:whitesmoke;
+    font-family: "Tahoma, Geneva, Verdana, sans-serif";
+    padding :15px;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    margin-left:0px;
+	margin-right: 0px;
+}
+
+/*titre*/
+h1
+{
+    margin: 20px;                                                   
+    text-align :center;
+    font-size : 2em;
+    color:firebrick;
+    margin-bottom: 0em;
+}
+
+h2
+{
+    border-bottom: 1px solid indianred;
+    font-size :1.5em;
+    color:indianred;
+}
+
+h3
+{
+    color: indianred;
+    font-size: 1.2em;
+    text-indent:10px;
+}
+
+.sub_h1
+{
+    text-align: center;
+    color: #8c0000;
+    font-style: italic;
+    font-size: 1.6em;
+    margin-left: 0.2em;
+}
+/*liens*/
+a
+{
+    color: firebrick;
+}
+
+a:visited{
+	color:salmon;
+}
+
+#Photo_auberge
+{
+    width:100%;
+}
+
+p{
+    margin-top:0.7em;
+    margin-bottom:0.7em;
+}
+
+/*navigation*/
+nav
+{
+    background-color: darkred;
+    width:100%;
+    position:fixed;
+    left: 0px;
+    z-index: 10;
+}
+
+nav a:hover{
+	text-decoration: underline;
+	font-weight: bold;
+}
+
+nav a
+{
+	color: white;
+	text-decoration: none;
+}
+
+nav a:visited
+{
+  color:whitesmoke ;  
+}
+
+nav ul li
+{
+    margin-left: 20px;
+    margin-right: 20px;
+}
+
+nav ul
+{ 
+    display:flex;
+    list-style: none;
+    justify-content:center;
+}
+
+nav:first-of-type{
+	top:0px;	
+}
+
+nav:last-of-type{
+	bottom:0px;
+}
+
+.active{
+	border-bottom:2px solid whitesmoke;
+	font-weight: bold;
+}
+
+/*tableau des chambres*/
+
+table
+{
+    width: 60%;
+    margin-right:auto;
+    margin-left: auto;
+    padding:10px;
+    border-collapse: collapse;
+    border:1px solid black;
+    
+}
+
+th
+{
+    border-style:none;
+    background:indianred;
+    color:white;
+    padding:10px;
+    border-collapse: collapse;
+    border:1px solid black;
+}
+
+td
+{
+    padding: 10px;
+    background-color: white;
+    border-collapse: collapse;
+    border:1px solid black;
+   
+}
+
+.colone2
+{
+    text-align: center;
+}
+.colone3
+{
+    text-align:right;
+}
+
+/*Formulaire*/
+
+fieldset
+{
+    display:block ;
+    width:60%;
+    background-color: ghostwhite;
+    margin:auto;
+    margin-top:1.5em;
+}
+
+input
+{
+    margin:8px;
+}
+
+input[required]
+{
+    font-weight: bold;
+}
+
+select
+{
+    font-size:larger;
+    width: 98%;
+    padding:10px;
+}
+
+input[type="text"]
+{
+    width: 200px;
+}
+input[type="email"]
+{
+    width: 230px;
+}
+input[type="tel"]
+{
+    width: 155px;
+}
+
+textarea
+{   
+    width: 98%;
+}
+
+input[type="submit"]
+{
+    font-size:larger;
+    display:block;
+    margin-left:auto;
+    margin-right:auto;
+    background-image:url("reserver.png");
+    width:128px;
+    height:46px;
+    cursor:grab;
+    border : none;
+    background-color:transparent;
+        
+}
+
+input[type="submit"]:hover{
+	background-image: url("reserver_hover.png");
+}
+
+textarea
+{
+    width: 98%;    
+}
+
+/* page Nous retrouver*/
+#auberge
+{
+    display:flex;
+    justify-content: space-between;
+    
+}
+
+#carte
+{
+    flex:1;
+    margin :20px;
+    
+} 
+
+#carte iframe
+{
+    width:  100%;
+    height: 100%;
+}
+
+
+#peillon_village
+{    
+    display:flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+#image img
+{
+	width:100%;
+}
+#image
+{	
+	margin:20px;	
+}
+
+#monuments
+{
+	color:darkred;
+	font-style: italic;
+}
+
+/*media queries*/
+@media screen and (max-width:600px){
+	nav a{
+		font-size:smaller;	
+	}
+	nav ul{
+		padding:10px 0 10px 0;
+		margin:0;
+	}
+	nav ul li{
+		margin-left:10px;
+		margin-right:10px;
+	}
+
+	#bloc1{
+		display:block;
+		width:100%;
+	}
+
+	#carte{
+		float:none;
+		width:100%;
+	}
+	table{
+		width:100%;
+	}
+}
+
+
+/* carrousel */
+
+#carrousel{
+	width80%;
+	max-width:600px;
+	margin-left:auto;
+	margin-right:auto;
+	margin-top:20px;
+	overflow:hidden;
+}
+#carrousel figure {
+	position:relative; 
+	width:500%;
+	margin:0;
+	padding:0;
+	font-size:0;
+	text-align:left;
+	animation:30s slidy infinite;
+  }
+
+#carrousel figure img {
+	width:20%; 
+	height:auto; 
+	float:left;
+}
+
+/* Définition des images-clés de l'animation */
+@keyframes slidy {
+	0% { left:0%; } /* point de départ : on voit la 1ère */
+	12% { left:-100%; } /* décalage de la largeur d'une image : on voit la 2e */
+	25% { left:-200%; } 
+	37% { left:-300%; } 
+	50% {left:-400%;}	 
+	62% { left:-300%; } /* retour : décalage de 3x la largeur d'une image : on voit la 4e de nouveau */
+	75% {left:-200%;}	
+	87% {left:-100%;}
+	100% {left:0%} /* même état que le départ */
+  }
